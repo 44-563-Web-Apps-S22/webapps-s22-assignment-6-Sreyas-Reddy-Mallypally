@@ -19,9 +19,42 @@
     <input type="button" onclick="orderComputer()" value="Order a computer">
 </form>
 
+<p id="result">This text will be replaced </p><br>
+    <form>
+        <label for="property_name">Enter a property name</label>
+        <input type="text" id="property_name" name="property_name" value="engraved"> <br>
+
+        <label for="property_value">Enter a value</label>
+        <input type="text" id="property_value" name="property_value"> <br>
+
+        <input type="button" onclick="updateComputer()" value="Update the computer">
+    </form>
+
 <p id="result">This text will be replaced </p>
 
+    <script>
+        let my_computer = {};
+        out = document.getElementById("result");
+        function orderComputer() {
+            my_computer = {}
+            extra_memory = document.getElementById("memory").checked;
+            mouse = document.getElementById("mouse").checked;
+            service = document.getElementById("service").checked;
+            my_computer["extra_memory"] = extra_memory;
+            my_computer["mouse"] = mouse;
+            my_computer["service"] = service;
+            out.innerHTML =
+                "Extra Money: " + my_computer.extra_memory + ", <br> Mouse: " + my_computer.mouse + ", <br>Cell Service: " + my_computer.service;
+        }
 
+        function updateComputer() {
+            propertyName = document.getElementById("property_name").value;
+            propertyValue = document.getElementById("property_value").value;
+            my_computer["property_name"] = propertyValue;
+            out.innerHTML =
+                propertyName + " property: " + my_computer.propertyName;
+        }
+    </script>
 
 </body>
 </html> 
