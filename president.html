@@ -25,14 +25,20 @@
             {
                 correct++;
                 alert("You got it right")
-                out.innerHTML = "Correct count:"+correct+"  Wrong count:"+wrong
+                out.innerHTML = "Correct count:"+correct+"  Wrong count:"+wrong;
             }else{
                 wrong++;
                 alert("Wrong President")
-                out.innerHTML = "Correct count:"+correct+"  Wrong count:"+wrong
+                out.innerHTML = "Correct count:"+correct+"  Wrong count:"+wrong;
+                if(wrong>=3)
+                    wrongGuess();
             }
         }
+        function wrongGuess() {
+            alert("Sorry, game over.");
+        }
     </script>
+
 
 <div>
     <img src="accepitridae.jpg" id="im" width="100" height="100" onclick="swapImage()">
