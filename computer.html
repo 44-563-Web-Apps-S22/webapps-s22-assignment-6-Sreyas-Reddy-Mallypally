@@ -18,8 +18,7 @@
     </div>
     <input type="button" onclick="orderComputer()" value="Order a computer">
 </form>
-
-<p id="result">This text will be replaced </p><br>
+<br>
     <form>
         <label for="property_name">Enter a property name</label>
         <input type="text" id="property_name" name="property_name" value="engraved"> <br>
@@ -44,15 +43,14 @@
             my_computer["mouse"] = mouse;
             my_computer["service"] = service;
             out.innerHTML =
-                "Extra Money: " + my_computer.extra_memory + ", <br> Mouse: " + my_computer.mouse + ", <br>Cell Service: " + my_computer.service;
+                "Extra Money: " + my_computer.extra_memory + " <br> Mouse: " + my_computer.mouse + " <br>Cell Service: " + my_computer.service;
         }
 
         function updateComputer() {
-            propertyName = document.getElementById("property_name").value;
-            propertyValue = document.getElementById("property_value").value;
-            my_computer["property_name"] = propertyValue;
-            out.innerHTML =
-                propertyName + " property: " + my_computer.propertyName;
+            property_name = document.getElementById("property_name").value;
+            property_value = document.getElementById("property_value").value;
+            my_computer["property_name"] = property_value;
+            out.innerHTML =property_name + " property: " + my_computer.property_name;
         }
     </script>
 
